@@ -10,7 +10,7 @@ InitializeMathTools[] := Module[
   
   dllPath = FileNameJoin[{destDir, "MathToolsLib.dll"}];
   
-  If[Not[FileQ[dllPath]],
+  If[Not[FileExistsQ[dllPath]],
     Print["[MathTools] Downloading libraries from GitHub..."];
     localZip = FileNameJoin[{destDir, "MathTools.zip"}];
     URLDownload[zipUrl, localZip];
